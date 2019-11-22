@@ -53,6 +53,24 @@ class UI{
             `
         });
         productsDOM.innerHTML = result
+    };
+
+    getBagButtons(){
+        const buttons = [...document.querySelectorAll('.bag-btn')];
+        buttons.forEach(button => {
+            let id = button.dataset.id;
+            let inCart = cart.find(item => item.id === id);
+
+            if(inCart){
+                button.innerText = 'In Cart';
+                button.disabled = true
+            }else{
+                button.addEventListener('click', (event) => {
+                    event.target.innerText = 'In Cart';
+                    event.target.disabled = true
+                })
+            }
+        })
     }
 }
 
@@ -73,6 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
         ui.displayProducts(products);
         //Save Product into LocaStroage
         Storage.saveProducts(products)
+    }).then(() => {
+        ui.getBagButtons()
     });
     
 })
