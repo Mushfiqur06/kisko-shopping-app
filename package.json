@@ -1,0 +1,26 @@
+{
+  "name": "kisko-shopping-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "compile:sass": "node-sass main.scss styles.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mushfiqur06/kisko-shopping-app.git"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "node-sass": "^4.5.3"
+  },
+  "keywords": [],
+  "author": "Mushfiqur Niloy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mushfiqur06/kisko-shopping-app/issues"
+  },
+  "homepage": "https://github.com/Mushfiqur06/kisko-shopping-app#readme"
+}
